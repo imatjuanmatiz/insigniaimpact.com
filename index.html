@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Optimización de visibilidad en IA para marcas latinoamericanas. Aparece en ChatGPT, Claude, Perplexity y más.">
+    <title>Insignia Impact - Optimización para Inteligencias Artificiales</title>
+    
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-navy: #1e3a8a;
+            --color-teal: #14b8a6;
+            --color-dark: #0f172a;
+            --color-gray: #64748b;
+            --color-light: #f8fafc;
+            --font-display: 'Georgia', 'Times New Roman', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--color-dark);
+            background: var(--color-light);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(30, 58, 138, 0.1);
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo svg {
+            width: 140px;
+            height: auto;
+        }
+
+        .nav-cta {
+            background: var(--color-teal);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            background: #0d9488;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--color-dark) 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(20, 184, 166, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(30, 58, 138, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(20, 184, 166, 0.15);
+            color: var(--color-teal);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(20, 184, 166, 0.3);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .highlight {
+            color: var(--color-teal);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--color-teal);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #0d9488;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(20, 184, 166, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        .hero-platforms {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-platforms p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        .platform-tags {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .platform-tag {
+            background: rgba(255, 255, 255, 0.05);
+            color: #cbd5e1;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--color-teal);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--color-dark);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--color-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .audience-card {
+            background: var(--color-light);
+            padding: 2.5rem;
+            border-radius: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .audience-card.complete {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+
+        .audience-card.incomplete {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .audience-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .audience-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .audience-status {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .audience-card.complete .audience-status {
+            color: #10b981;
+        }
+
+        .audience-card.incomplete .audience-status {
+            color: #ef4444;
+        }
+
+        .audience-description {
+            font-size: 0.95rem;
+            color: var(--color-gray);
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--color-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-navy), var(--color-teal));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: var(--color-teal);
+            box-shadow: 0 12px 32px rgba(20, 184, 166, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .service-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .service-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-teal);
+            margin-bottom: 0.25rem;
+        }
+
+        .service-price-note {
+            font-size: 0.85rem;
+            color: var(--color-gray);
+        }
+
+        .service-description {
+            color: var(--color-gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--color-gray);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: var(--color-teal);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .service-cta {
+            display: block;
+            text-align: center;
+            background: var(--color-navy);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .service-cta:hover {
+            background: var(--color-teal);
+            transform: translateY(-2px);
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 4rem 2rem;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-teal);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-display);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--color-gray);
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(30, 58, 138, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        /* Form */
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--color-dark);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-teal);
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--color-teal);
+            color: white;
+            padding: 1.125rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background: #0d9488;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(20, 184, 166, 0.3);
+        }
+
+        .form-submit:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #f0fdf4;
+            color: #10b981;
+            border: 1px solid #10b981;
+        }
+
+        .form-message.error {
+            background: #fef2f2;
+            color: #ef4444;
+            border: 1px solid #ef4444;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem;
+            background: var(--color-dark);
+            color: #cbd5e1;
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .footer-logo svg {
+            width: 160px;
+            height: auto;
+        }
+
+        .footer p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-teal);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .logo svg {
+                width: 120px;
+            }
+
+            .nav-cta {
+                padding: 0.625rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .audience-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-container > * {
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .hero-badge {
+            animation-delay: 0.1s;
+        }
+
+        .hero h1 {
+            animation-delay: 0.2s;
+        }
+
+        .hero p {
+            animation-delay: 0.3s;
+        }
+
+        .hero-ctas {
+            animation-delay: 0.4s;
+        }
+
+        .hero-platforms {
+            animation-delay: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 30,30 L 35,22 L 40,35 L 45,18 L 50,30 L 55,25" 
+                          stroke="#1e3a8a" stroke-width="4" fill="none" 
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="55" cy="25" r="3" fill="#1e3a8a"/>
+                    <text x="75" y="32" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1e3a8a">INSIGNIA</text>
+                    <text x="75" y="52" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#14b8a6">IMPACT</text>
+                </svg>
+            </a>
+            <a href="#contacto" class="nav-cta">Comenzar Ahora</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">Optimización para IA</div>
+            <h1>
+                Tu marca existe en digital.<br/>
+                Pero <span class="highlight">¿existe para la IA?</span>
+            </h1>
+            <p>
+                ChatGPT, Claude y Perplexity ya están recomendando productos a millones de usuarios en LATAM. 
+                ¿Aparece tu marca en esas conversaciones? Si no optimizas para IA, perdiste la venta.
+            </p>
+            <div class="hero-ctas">
+                <a href="#contacto" class="btn-primary">
+                    Audita tu Visibilidad en IA →
+                </a>
+                <a href="#servicios" class="btn-secondary">
+                    Ver cómo funciona
+                </a>
+            </div>
+            <div class="hero-platforms">
+                <p>Optimizamos tu presencia en:</p>
+                <div class="platform-tags">
+                    <span class="platform-tag">ChatGPT</span>
+                    <span class="platform-tag">Claude</span>
+                    <span class="platform-tag">Perplexity</span>
+                    <span class="platform-tag">Gemini</span>
+                    <span class="platform-tag">Grok</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">El Problema</div>
+                <h2 class="section-title">La Tercera Audiencia que Olvidaste Optimizar</h2>
+                <p class="section-description">
+                    Durante dos décadas, optimizamos para humanos y Google. Ahora existe una tercera audiencia crítica: 
+                    las Inteligencias Artificiales.
+                </p>
+            </div>
+            <div class="audience-grid">
+                <div class="audience-card complete">
+                    <div class="audience-icon">👥</div>
+                    <h3 class="audience-title">Humanos</h3>
+                    <div class="audience-status">✓ Optimizado</div>
+                    <p class="audience-description">
+                        Tu sitio web está diseñado para personas: UX, diseño visual, navegación intuitiva.
+                    </p>
+                </div>
+                <div class="audience-card complete">
+                    <div class="audience-icon">🔍</div>
+                    <h3 class="audience-title">Google</h3>
+                    <div class="audience-status">✓ Optimizado</div>
+                    <p class="audience-description">
+                        Tienes SEO: keywords, backlinks, meta tags, structured data para motores de búsqueda.
+                    </p>
+                </div>
+                <div class="audience-card incomplete">
+                    <div class="audience-icon">🤖</div>
+                    <h3 class="audience-title">Inteligencias Artificiales</h3>
+                    <div class="audience-status">✗ Sin optimizar</div>
+                    <p class="audience-description">
+                        Las IA procesan información diferente. Sin AEO/GEO, tu marca es invisible para ellas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Nuestros Servicios</div>
+                <h2 class="section-title">Tres Niveles de Optimización para IA</h2>
+                <p class="section-description">
+                    Servicios especializados para cada etapa de tu viaje hacia la visibilidad en IA
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">AI Visibility Audit</h3>
+                        <div class="service-price">$800</div>
+                        <div class="service-price-note">Pago único</div>
+                    </div>
+                    <p class="service-description">
+                        Diagnóstico completo de tu presencia actual en sistemas de IA. Descubre cómo te ven ChatGPT, Claude y otros.
+                    </p>
+                    <ul class="service-features">
+                        <li>Análisis de 50+ prompts relevantes a tu industria</li>
+                        <li>Benchmark vs competencia directa</li>
+                        <li>Informe de brechas y oportunidades</li>
+                        <li>Roadmap de optimización priorizado</li>
+                        <li>Entrega en 5 días hábiles</li>
+                    </ul>
+                    <a href="#contacto" class="service-cta">Solicitar Audit</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">AI Content Optimization</h3>
+                        <div class="service-price">$1,800</div>
+                        <div class="service-price-note">Pago único</div>
+                    </div>
+                    <p class="service-description">
+                        Implementación de optimizaciones técnicas y de contenido para aumentar tu visibilidad en IA.
+                    </p>
+                    <ul class="service-features">
+                        <li>Incluye AI Visibility Audit completo</li>
+                        <li>Optimización de 10 páginas clave</li>
+                        <li>Creación de structured data para IA</li>
+                        <li>Content chunks optimizados (listicles, FAQs)</li>
+                        <li>Implementación técnica (markdown, schema)</li>
+                        <li>Re-audit post-implementación</li>
+                    </ul>
+                    <a href="#contacto" class="service-cta">Comenzar Optimización</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3 class="service-name">AI Growth Retainer</h3>
+                        <div class="service-price">$2,500</div>
+                        <div class="service-price-note">Mensual</div>
+                    </div>
+                    <p class="service-description">
+                        Gestión continua de tu presencia en IA con monitoreo, optimización y creación de contenido.
+                    </p>
+                    <ul class="service-features">
+                        <li>Todo lo de AI Content Optimization inicial</li>
+                        <li>Monitoreo mensual de visibilidad (100+ prompts)</li>
+                        <li>4 piezas de contenido optimizado/mes</li>
+                        <li>Ajustes técnicos continuos</li>
+                        <li>Reporte mensual con métricas</li>
+                        <li>Llamadas de estrategia quincenales</li>
+                        <li>Alertas de cambios en algoritmos de IA</li>
+                    </ul>
+                    <a href="#contacto" class="service-cta">Hablar con Experto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">de decisiones B2B comienzan en conversaciones con IA</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">&lt;5%</div>
+                    <div class="stat-label">de marcas LATAM están optimizadas para IA</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">700%</div>
+                    <div class="stat-label">aumento en referrals reportado por marcas optimizadas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contacto">
+        <div class="cta-container">
+            <h2>Comienza con un AI Visibility Audit</h2>
+            <p>
+                Descubre cómo te ven las inteligencias artificiales hoy y qué puedes hacer para aparecer 
+                cuando millones de usuarios buscan productos como el tuyo.
+            </p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email corporativo *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="empresa">Empresa *</label>
+                    <input type="text" id="empresa" name="empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="website">Sitio web *</label>
+                    <input type="url" id="website" name="website" placeholder="https://" required>
+                </div>
+                <div class="form-group">
+                    <label for="industria">Industria *</label>
+                    <select id="industria" name="industria" required>
+                        <option value="">Selecciona tu industria</option>
+                        <option value="ecommerce">E-commerce / Retail</option>
+                        <option value="saas">SaaS / Software</option>
+                        <option value="fintech">Fintech / Servicios financieros</option>
+                        <option value="marketplace">Marketplace</option>
+                        <option value="educacion">Educación / EdTech</option>
+                        <option value="salud">Salud / HealthTech</option>
+                        <option value="turismo">Turismo / Hospitalidad</option>
+                        <option value="otro">Otra industria</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="servicio">Servicio de interés *</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="">Selecciona un servicio</option>
+                        <option value="audit">AI Visibility Audit ($800)</option>
+                        <option value="optimization">AI Content Optimization ($1,800)</option>
+                        <option value="retainer">AI Growth Retainer ($2,500/mes)</option>
+                        <option value="consulta">Solo quiero una consulta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Cuéntanos sobre tu negocio (opcional)</label>
+                    <textarea id="mensaje" name="mensaje" rows="3"></textarea>
+                </div>
+                <button type="submit" class="form-submit">Enviar Solicitud</button>
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 30,30 L 35,22 L 40,35 L 45,18 L 50,30 L 55,25" 
+                          stroke="#14b8a6" stroke-width="4" fill="none" 
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="55" cy="25" r="3" fill="#14b8a6"/>
+                    <text x="75" y="32" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#cbd5e1">INSIGNIA</text>
+                    <text x="75" y="52" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#14b8a6">IMPACT</text>
+                </svg>
+            </div>
+            <p>Optimización de visibilidad en IA para marcas latinoamericanas</p>
+            <div class="footer-links">
+                <a href="/blog/2026/01/27/la-tercera-audiencia/">Blog</a>
+                <a href="/#servicios">Servicios</a>
+                <a href="/#contacto">Contacto</a>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 2rem; opacity: 0.7;">
+                © 2026 Insignia Impact. Cartagena, Colombia.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form handling
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.form-submit');
+            const message = document.getElementById('formMessage');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            
+            // Get form data
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                email: document.getElementById('email').value,
+                empresa: document.getElementById('empresa').value,
+                website: document.getElementById('website').value,
+                industria: document.getElementById('industria').value,
+                servicio: document.getElementById('servicio').value,
+                mensaje: document.getElementById('mensaje').value
+            };
+            
+            // Create email body
+            const emailBody = `
+NUEVO LEAD - INSIGNIA IMPACT
+
+CONTACTO:
+- Nombre: ${formData.nombre}
+- Email: ${formData.email}
+- Empresa: ${formData.empresa}
+- Website: ${formData.website}
+
+INFORMACIÓN DEL NEGOCIO:
+- Industria: ${formData.industria}
+- Servicio de interés: ${formData.servicio}
+
+MENSAJE:
+${formData.mensaje || 'No proporcionó mensaje adicional'}
+
+---
+Lead generado desde: insigniaimpact.com
+Fecha: ${new Date().toLocaleString('es-CO')}
+            `.trim();
+            
+            // Create mailto link
+            const mailtoLink = `mailto:juan@insigniaimpact.com?subject=Nuevo Lead: ${formData.empresa} - ${formData.servicio}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open mailto
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            message.textContent = '¡Gracias! Tu solicitud ha sido enviada. Te contactaremos pronto.';
+            message.className = 'form-message success';
+            message.style.display = 'block';
+            
+            // Reset form
+            setTimeout(() => {
+                this.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Enviar Solicitud';
+                
+                setTimeout(() => {
+                    message.style.display = 'none';
+                }, 3000);
+            }, 2000);
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards
+        document.querySelectorAll('.audience-card, .service-card, .stat').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

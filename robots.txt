@@ -1,0 +1,39 @@
+# Insignia Impact - Robots.txt
+# Optimizado para crawlers de IA y motores de búsqueda
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://insigniaimpact.com/sitemap.xml
+
+# AI Crawlers - Bienvenidos
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot-Extended
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Referencia a llms.txt para IA
+# https://insigniaimpact.com/llms.txt

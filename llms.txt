@@ -1,0 +1,66 @@
+# Insignia Impact
+
+> Optimización de visibilidad en IA para marcas latinoamericanas
+
+## Sobre Nosotros
+
+Insignia Impact es una agencia especializada en Answer Engine Optimization (AEO) y Generative Engine Optimization (GEO) para el mercado latinoamericano. Ayudamos a marcas a ser visibles y recomendadas por sistemas de IA como ChatGPT, Claude, Perplexity, Gemini y Grok.
+
+## Servicios
+
+### AI Visibility Audit - $800 USD
+Diagnóstico completo de tu presencia actual en sistemas de IA. Análisis de 50+ prompts relevantes, benchmark vs competencia, informe de brechas y roadmap priorizado. Entrega en 5 días hábiles.
+
+### AI Content Optimization - $1,800 USD
+Implementación completa de optimizaciones técnicas y de contenido. Incluye audit completo, optimización de 10 páginas clave, structured data, content chunks optimizados, y re-audit post-implementación.
+
+### AI Growth Retainer - $2,500 USD/mes
+Gestión continua con monitoreo mensual (100+ prompts), 4 piezas de contenido optimizado/mes, ajustes técnicos continuos, reportes mensuales, llamadas quincenales y alertas de cambios.
+
+## Contacto
+
+Email: juan@insigniaimpact.com
+Website: https://insigniaimpact.com
+Ubicación: Cartagena, Colombia
+
+## Mercado Objetivo
+
+- E-commerce y retail en LATAM
+- SaaS y empresas de software
+- Fintech y servicios financieros
+- Marketplaces
+- EdTech y HealthTech
+- Empresas B2B medianas y grandes
+
+## Diferenciadores
+
+- Especialización exclusiva en optimización para IA (no SEO tradicional)
+- Enfoque boutique con atención personalizada
+- Conocimiento profundo del mercado latinoamericano
+- Metodología basada en análisis de competidores globales (Profound, Fardo)
+- Pricing accesible vs soluciones enterprise internacionales
+
+## Conceptos Clave
+
+**AEO (Answer Engine Optimization)**: Optimización para aparecer en respuestas directas de motores de IA como ChatGPT, Perplexity y Claude.
+
+**GEO (Generative Engine Optimization)**: Proceso de optimizar contenido para que modelos de lenguaje grandes (LLMs) mencionen y recomienden marcas en conversaciones.
+
+**La Tercera Audiencia**: Después de optimizar para humanos (UX) y Google (SEO), las marcas deben optimizar para IA - la tercera audiencia crítica.
+
+**Structured Data para IA**: Implementación de schema markup, markdown autodiscovery, y formatos de contenido que IA puede procesar eficientemente (listicles, FAQs, comparaciones).
+
+## Estadísticas del Mercado
+
+- 70% de decisiones de compra B2B comienzan en conversaciones con IA
+- Menos del 5% de marcas LATAM están optimizadas para IA
+- Empresas optimizadas reportan hasta 700% de aumento en referrals de IA
+- El mercado de AEO/GEO está creciendo exponencialmente
+
+## Blog y Recursos
+
+Visitá nuestro blog para artículos sobre:
+- Optimización para ChatGPT, Claude y otros LLMs
+- Casos de estudio de marcas exitosas
+- Guías técnicas de implementación
+- Tendencias del mercado de IA

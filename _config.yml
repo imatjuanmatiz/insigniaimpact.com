@@ -1,0 +1,50 @@
+# Configuración del sitio
+title: Insignia Impact
+description: Optimización de visibilidad en IA para marcas latinoamericanas
+url: "https://insigniaimpact.com"
+baseurl: ""
+
+# SEO
+author: Juan Pablo - Insignia Impact
+twitter_username: insigniaimpact
+github_username: insigniaimpact
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Configuración de permalinks
+permalink: /blog/:year/:month/:day/:title/
+
+# Configuración de colecciones
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Juan Pablo"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Timezone
+timezone: America/Bogota
+
+# Encoding
+encoding: utf-8
