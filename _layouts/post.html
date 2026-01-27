@@ -1,0 +1,322 @@
+INSTRUCCIONES:
+1. En tu repo de GitHub, click "Add file" → "Create new file"
+2. Nombra el archivo: _layouts/post.html
+3. Copia TODO el contenido de abajo (desde <!DOCTYPE hasta </html>)
+4. Pégalo en GitHub
+5. Click "Commit changes"
+
+================== COPIA DESDE AQUÍ ==================
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.excerpt | default: site.description }}">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-navy: #1e3a8a;
+            --color-teal: #14b8a6;
+            --color-dark: #0f172a;
+            --color-gray: #64748b;
+            --color-light: #f8fafc;
+            --font-display: 'Georgia', 'Times New Roman', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.7;
+            color: #1e293b;
+            background: white;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(30, 58, 138, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo svg {
+            width: 140px;
+            height: auto;
+        }
+
+        .nav-link {
+            color: var(--color-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-teal);
+        }
+
+        .post-header {
+            margin-top: 80px;
+            padding: 4rem 2rem 2rem;
+            background: linear-gradient(135deg, var(--color-dark) 0%, #1e293b 100%);
+            color: white;
+        }
+
+        .post-header-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-meta {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        .post-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .post-excerpt {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .post-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .post-content h1 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+
+        .post-content h2 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin: 2.5rem 0 1rem;
+            line-height: 1.3;
+        }
+
+        .post-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-navy);
+            margin: 2rem 0 1rem;
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+            color: #334155;
+        }
+
+        .post-content strong {
+            color: var(--color-dark);
+            font-weight: 600;
+        }
+
+        .post-content em {
+            color: var(--color-gray);
+        }
+
+        .post-content ul, .post-content ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.75rem;
+            color: #334155;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid var(--color-teal);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background: var(--color-light);
+            font-style: italic;
+            color: var(--color-gray);
+        }
+
+        .post-content a {
+            color: var(--color-teal);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .post-content a:hover {
+            border-bottom-color: var(--color-teal);
+        }
+
+        .post-content code {
+            background: var(--color-light);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+
+        .post-content pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        .post-content hr {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 3rem 0;
+        }
+
+        .post-footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-teal);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 1rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-dark) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .cta-box p {
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--color-teal);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #0d9488;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(20, 184, 166, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .post-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .post-header {
+                padding: 3rem 1.5rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 30,30 L 35,22 L 40,35 L 45,18 L 50,30 L 55,25" 
+                          stroke="#1e3a8a" stroke-width="4" fill="none" 
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="55" cy="25" r="3" fill="#1e3a8a"/>
+                    <text x="75" y="32" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1e3a8a">INSIGNIA</text>
+                    <text x="75" y="52" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#14b8a6">IMPACT</text>
+                </svg>
+            </a>
+            <a href="/" class="nav-link">← Inicio</a>
+        </div>
+    </nav>
+
+    <header class="post-header">
+        <div class="post-header-container">
+            <div class="post-meta">
+                {{ page.date | date: "%d de %B, %Y" }} · Por {{ page.author }}
+            </div>
+            <h1 class="post-title">{{ page.title }}</h1>
+            {% if page.excerpt %}
+            <p class="post-excerpt">{{ page.excerpt }}</p>
+            {% endif %}
+        </div>
+    </header>
+
+    <article class="post-content">
+        {{ content }}
+    </article>
+
+    <div class="post-footer">
+        <a href="/" class="back-link">← Volver al inicio</a>
+    </div>
+</body>
+</html>
