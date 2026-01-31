@@ -1,295 +1,158 @@
-# Insignia Impact Website
+# Insignia Impact
 
-Sitio web oficial de Insignia Impact desplegado en GitHub Pages con Jekyll.
-
-## 🚀 Deploy Rápido (10 minutos)
-
-### Paso 1: Crear Repositorio en GitHub
-
-1. Ve a [github.com](https://github.com) e inicia sesión (o crea cuenta gratis)
-2. Click en el botón **"+"** arriba a la derecha → **"New repository"**
-3. Nombra el repo: `insigniaimpact.com` (o el nombre que prefieras)
-4. Marca como **"Public"**
-5. Click **"Create repository"**
-
-### Paso 2: Subir Archivos
-
-**Opción A - Interfaz Web (Más Fácil):**
-
-1. En tu nuevo repositorio, click **"uploading an existing file"**
-2. Arrastra TODOS los archivos de esta carpeta al navegador
-3. Scroll down, click **"Commit changes"**
-
-**Opción B - Git (Más Pro):**
-
-```bash
-# En tu terminal, dentro de esta carpeta
-git init
-git add .
-git commit -m "Initial commit - Insignia Impact website"
-git branch -M main
-git remote add origin https://github.com/TU-USUARIO/insigniaimpact.com.git
-git push -u origin main
-```
-
-### Paso 3: Activar GitHub Pages
-
-1. En tu repositorio, ve a **"Settings"** (arriba)
-2. En el menú izquierdo, click **"Pages"**
-3. En **"Source"**, selecciona **"Deploy from a branch"**
-4. En **"Branch"**, selecciona **"main"** y **"/ (root)"**
-5. Click **"Save"**
-6. **Espera 2-3 minutos** → Tu sitio estará en `https://TU-USUARIO.github.io/insigniaimpact.com`
-
-### Paso 4: Conectar tu Dominio (insigniaimpact.com)
-
-1. En GitHub Pages settings (Paso 3), hay una sección **"Custom domain"**
-2. Escribe: `insigniaimpact.com`
-3. Click **"Save"**
-4. GitHub te mostrará los DNS records que necesitas
-
-5. Ve a **GoDaddy**:
-   - Inicia sesión → **"Mis Productos"** → **"DNS"**
-   - Elimina los records A existentes
-   - Agrega estos 4 records **A**:
-     ```
-     185.199.108.153
-     185.199.109.153
-     185.199.110.153
-     185.199.111.153
-     ```
-   - Agrega un record **CNAME**:
-     ```
-     www → TU-USUARIO.github.io
-     ```
-
-6. **Espera 15-60 minutos** → Tu sitio estará en `insigniaimpact.com` ✅
+**Optimización de Visibilidad en Inteligencias Artificiales para Marcas Latinoamericanas**
 
 ---
 
-## 📝 Cómo Agregar Blog Posts
+## 🎯 Nuestra Misión
 
-### Opción 1: Desde GitHub (Sin código)
+En Insignia Impact ayudamos a marcas B2B en LATAM a **aparecer cuando las personas preguntan a las IAs**.
 
-1. Ve a tu repositorio en GitHub
-2. Navega a la carpeta `_posts`
-3. Click **"Add file"** → **"Create new file"**
-4. Nombra el archivo: `YYYY-MM-DD-titulo-del-post.md`
-   - Ejemplo: `2026-02-15-como-optimizar-para-chatgpt.md`
-5. Copia esta estructura:
-
-```markdown
----
-layout: post
-title: "Tu Título Aquí"
-date: 2026-02-15 10:00:00 -0500
-categories: [aeo, tutoriales]
-author: Juan Pablo
-excerpt: "Resumen corto del post que aparecerá en previews"
----
-
-# Tu Título
-
-Aquí va tu contenido en Markdown...
-
-## Subtítulo
-
-- Lista de puntos
-- Otro punto
-
-**Texto en negrita** y *cursiva*
-
-[Link a algo](https://ejemplo.com)
-```
-
-6. Click **"Commit changes"**
-7. Espera 1-2 minutos → Tu post estará publicado
-
-### Opción 2: Localmente
-
-1. Crea un archivo `.md` en la carpeta `_posts`
-2. Usa el mismo formato de arriba
-3. Haz commit y push:
-   ```bash
-   git add _posts/tu-nuevo-post.md
-   git commit -m "Nuevo post: Título"
-   git push
-   ```
+Mientras tus competidores siguen optimizando solo para Google, nosotros te posicionamos en **ChatGPT, Claude, Perplexity, Gemini** y todos los motores de respuesta que están transformando cómo los clientes te descubren.
 
 ---
 
-## 🎨 Personalización
+## 🤖 El Problema Que Resolvemos
 
-### Cambiar Colores
+**El 70% de las decisiones B2B ahora comienzan con una pregunta a una IA.**
 
-Edita las variables CSS en `index.html` (línea ~25):
+Cuando un potencial cliente pregunta:
+- *"¿Cuál es el mejor software de contabilidad en Colombia?"*
+- *"Recomiéndame una agencia de marketing digital en Bogotá"*
+- *"¿Qué CRM usan las startups fintech en LATAM?"*
 
-```css
-:root {
-    --color-navy: #1e3a8a;    /* Azul principal */
-    --color-teal: #14b8a6;    /* Verde/teal de Impact */
-    --color-dark: #0f172a;    /* Fondo oscuro */
-    --color-gray: #64748b;    /* Texto secundario */
-}
-```
+**¿Aparece tu marca en la respuesta?**
 
-### Cambiar Servicios o Precios
-
-Edita `index.html` en la sección `<!-- Services Section -->` (línea ~500)
-
-### Agregar Páginas Nuevas
-
-Crea archivos `.html` o `.md` en la raíz:
-- `sobre-nosotros.md`
-- `casos-de-estudio.html`
-- etc.
+Si no, estás perdiendo clientes sin siquiera saberlo.
 
 ---
 
-## 🤖 Optimización para IA (Lo que hace especial este sitio)
+## 💡 Qué Hacemos
 
-### 1. llms.txt
-El archivo `llms.txt` le dice a las IA quién eres y qué haces.
+### AEO (Answer Engine Optimization)
 
-**Para editarlo:**
-- Abre `llms.txt`
-- Actualiza con nueva info de servicios, casos de éxito, etc.
-- Las IA lo leerán automáticamente
+Optimizamos tu presencia digital para que las inteligencias artificiales **mencionen y recomienden tu marca** cuando usuarios hacen preguntas relacionadas con tu industria.
 
-### 2. Markdown Autodiscovery
-Tus posts en `_posts/*.md` son accesibles en formato Markdown puro.
+**No reemplazamos tu SEO. Lo complementamos.**
 
-**Ejemplo:**
-- HTML: `insigniaimpact.com/blog/2026/01/27/la-tercera-audiencia/`
-- Markdown: `insigniaimpact.com/blog/2026/01/27/la-tercera-audiencia.md` ← IA prefieren esto
+### Nuestros Servicios
 
-### 3. Structured Data
-El sitio ya incluye:
-- Meta tags optimizados
-- Schema.org básico
-- Sitemap automático (Jekyll lo genera)
+#### 1. **AI Visibility Audit**
+Descubre exactamente cómo te ven ChatGPT, Claude, Perplexity y Gemini.
 
-**Para agregar más:**
-Edita el `<head>` de `index.html` o crea `_layouts/default.html`
+**Incluye:**
+- Análisis de visibilidad en 4+ IAs principales
+- Benchmark vs. competencia
+- Mapeo de brechas de contenido
+- Reporte ejecutivo con prioridades
 
----
+#### 2. **AEO Implementation**
+Implementamos optimizaciones concretas para mejorar tu visibilidad.
 
-## 📊 Analytics y Tracking
+**Incluye:**
+- Optimización de contenido existente
+- Structured data (Schema.org)
+- Creación de contenido "answer-ready"
+- Consistencia de entidad digital
+- Estrategia de autoridad y menciones
 
-### Google Analytics (Recomendado)
+#### 3. **Ongoing AEO Management**
+Mantenimiento continuo para mantener y mejorar tu visibilidad.
 
-1. Crea cuenta en [analytics.google.com](https://analytics.google.com)
-2. Obtén tu tracking ID (ej: `G-XXXXXXXXXX`)
-3. Agrega antes de `</head>` en `index.html`:
-
-```html
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-```
+**Incluye:**
+- Monitoreo mensual de visibilidad
+- Optimización de contenido nuevo
+- Respuesta a cambios en algoritmos de IA
+- Reporte de performance
+- Consultoría estratégica continua
 
 ---
 
-## 🔧 Testing Local
+## 🎓 Por Qué Nosotros
 
-Si quieres ver el sitio localmente antes de publicar:
+### Especializados en LATAM
+Entendemos el mercado, idioma y particularidades de Latinoamérica.
 
-```bash
-# Instala Jekyll (solo primera vez)
-gem install bundler jekyll
+### Early Adopters
+Mientras menos del 5% de las marcas en LATAM optimizan para IA, nosotros ya llevamos ventaja.
 
-# Crea Gemfile
-echo 'source "https://rubygems.org"
-gem "github-pages", group: :jekyll_plugins' > Gemfile
+### Enfoque en Resultados
+No vendemos teoría. Medimos tu visibilidad antes y después, con datos concretos.
 
-# Instala dependencias
-bundle install
-
-# Corre el servidor local
-bundle exec jekyll serve
-
-# Abre: http://localhost:4000
-```
+### Transparencia Total
+Sabrás exactamente qué estamos haciendo, por qué lo hacemos, y qué resultados obtenemos.
 
 ---
 
-## 📧 Configuración de Email
+## 📊 El Cambio Ya Está Pasando
 
-El formulario actualmente usa `mailto:` que abre el cliente de email del usuario.
+- **25%** del tráfico web migrará a IA para 2026 (Gartner)
+- **80%** de caída en CTR cuando aparecen AI Overviews
+- **98%** de compradores B2B usan IA en cada etapa de decisión
+- **200M+** usuarios semanales de ChatGPT
 
-**Para capturar leads automáticamente**, considera:
-
-1. **Formspree** (gratis para 50 envíos/mes)
-   - Crea cuenta en [formspree.io](https://formspree.io)
-   - Reemplaza el JavaScript del formulario
-
-2. **Netlify Forms** (si migras a Netlify)
-   - Agrega `netlify` attribute al form
-   - Los leads llegan a tu panel
-
-3. **Google Forms** (gratis ilimitado)
-   - Crea form en Google Forms
-   - Usa script para enviar data
+**Las marcas que optimizan para IA ahora capturan clientes que sus competidores ni siquiera saben que existen.**
 
 ---
 
-## 🎯 Checklist Post-Deploy
+## 🚀 Empieza Aquí
 
-- [ ] Sitio cargando en `insigniaimpact.com`
-- [ ] HTTPS activado (GitHub lo hace automático)
-- [ ] Formulario de contacto funcionando
-- [ ] Blog post de ejemplo visible
-- [ ] llms.txt accesible en `/llms.txt`
-- [ ] Analytics configurado
-- [ ] Todas las secciones tienen contenido correcto
-- [ ] Precios actualizados
-- [ ] Email de contacto correcto (juan@insigniaimpact.com)
+### Prueba Rápida (Gratis)
+Pregúntale a ChatGPT, Claude o Perplexity:
+- *"¿Cuáles son las mejores empresas de [tu industria] en [tu país]?"*
+- *"Recomiéndame [tu tipo de producto/servicio]"*
+
+¿Apareces? Si no, hablemos.
+
+### Consulta Inicial
+Agenda una llamada de 30 minutos para revisar tu situación actual y explorar oportunidades.
+
+**📧 Email:** contacto@insigniaimpact.com  
+**🌐 Web:** [insigniaimpact.com](https://insigniaimpact.com)
 
 ---
 
 ## 📚 Recursos
 
-- [Documentación Jekyll](https://jekyllrb.com/docs/)
-- [GitHub Pages Docs](https://docs.github.com/en/pages)
-- [Markdown Guide](https://www.markdownguide.org/)
-- [Artículo "The Third Audience"](https://dri.es/the-third-audience)
+### Blog
+Publicamos guías, análisis y estrategias sobre AEO y optimización para IA:
+- [¿Qué es AEO?](https://insigniaimpact.com/2026/01/30/que-es-aeo/)
+- [La Tercera Audiencia](https://insigniaimpact.com/2026/01/27/la-tercera-audiencia/)
+
+### Newsletter
+Suscríbete para recibir insights semanales sobre cómo las IAs están cambiando el marketing B2B.
 
 ---
 
-## 🆘 Problemas Comunes
+## 💬 Testimonios
 
-**"Mi sitio no aparece"**
-- Verifica que GitHub Pages esté activado en Settings
-- Revisa que el branch sea `main` y la carpeta sea `/ (root)`
-- Espera 2-3 minutos después de cada cambio
+> *"Antes éramos invisibles para ChatGPT. Después de trabajar con Insignia Impact, aparecemos en el top 3 de recomendaciones para nuestra industria."*  
+> — **Fundador, SaaS de gestión empresarial**
 
-**"Mi dominio custom no funciona"**
-- Verifica DNS en GoDaddy (pueden tardar hasta 48h pero usualmente 1h)
-- Asegúrate que escribiste el dominio sin `https://`
-- Revisa que los 4 records A estén correctos
+> *"El AEO fue el canal oculto que nadie en nuestra competencia está explotando. Nos dio ventaja de 6-12 meses."*  
+> — **CMO, Fintech LATAM**
 
-**"El blog post no aparece"**
-- Verifica que el nombre del archivo sea `YYYY-MM-DD-titulo.md`
-- Revisa que el front matter (entre ---) esté correcto
-- Espera 1-2 minutos después del commit
+---
 
-**"El formulario no funciona"**
-- El `mailto:` requiere que el usuario tenga cliente de email configurado
-- Considera usar Formspree o Google Forms para mejor experiencia
+## 🌎 Ubicación
+
+**Bogotá, Colombia**  
+Atendemos clientes en toda Latinoamérica de forma remota.
 
 ---
 
 ## 📞 Contacto
 
-**Founder:** Juan Pablo  
-**Email:** juan@insigniaimpact.com  
-**Website:** [insigniaimpact.com](https://insigniaimpact.com)
+**Founder:** Juan Pablo Matiz  
+**Email:** contacto@insigniaimpact.com  
+**Web:** [insigniaimpact.com](https://insigniaimpact.com)  
+**LinkedIn:** [Insignia Impact](https://linkedin.com/company/insignia-impact)
 
 ---
 
-**¡Tu sitio está listo para capturar leads y demostrar expertise en optimización para IA! 🚀**
+**¿Tu marca está lista para la tercera audiencia?**
+
+Las personas ya están preguntando. Las IAs ya están respondiendo.  
+La pregunta es: **¿están mencionando tu marca?**
+
+🔍 **[Descubre tu AI Visibility Score →](https://insigniaimpact.com)**
