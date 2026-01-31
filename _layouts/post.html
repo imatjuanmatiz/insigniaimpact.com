@@ -13,6 +13,10 @@ INSTRUCCIONES:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ page.excerpt | default: site.description }}">
+    <!-- Agent-native markdown alternate for AI crawlers -->
+    <link rel="alternate" type="text/markdown" href="{{ page.url | absolute_url }}.md" />
+    <meta name="ai-content-available" content="markdown" />
+    <meta name="ai-markdown-url" content="{{ page.url | absolute_url }}.md" />
     <title>{{ page.title }} - {{ site.title }}</title>
     
     <style>
