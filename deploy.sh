@@ -30,7 +30,18 @@ fi
 echo "✅ Haciendo commit: $commit_message"
 git commit -m "$commit_message"
 
-# Push a GitHub
+# Build site (Jekyll) and generate agent-native markdown
+echo "🔧 Building site with Jekyll..."
+jekyll build
+
+echo "📄 Generating agent-native markdown files..."
+./scripts/generate_md.sh
+
+# Run CI check locally (optional)
+echo "🔎 Running CI check for generated markdown..."
+./scripts/ci_check_md.sh
+
+# Push to GitHub
 echo "🌐 Subiendo a GitHub..."
 git push origin main
 

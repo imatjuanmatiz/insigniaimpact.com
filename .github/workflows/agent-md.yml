@@ -1,0 +1,48 @@
+name: Agent-native MD CI
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-generate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.2'
+
+    - name: Install Jekyll and Bundler
+      run: |
+        gem install bundler jekyll
+
+    - name: Install dependencies (if Gemfile present)
+      run: |
+        if [ -f Gemfile ]; then bundle install; fi
+
+    - name: Build site with Jekyll
+      run: |
+        if command -v jekyll >/dev/null 2>&1; then jekyll build; else echo "jekyll not found"; fi
+
+    - name: Make scripts executable
+      run: |
+        chmod +x ./scripts/generate_md.sh || true
+        chmod +x ./scripts/ci_check_md.sh || true
+
+    - name: Generate agent-native markdown files
+      run: ./scripts/generate_md.sh
+
+    - name: Run CI check for generated markdown
+      run: ./scripts/ci_check_md.sh
+
+    - name: Upload artifacts (generated markdown)
+      uses: actions/upload-artifact@v4
+      with:
+        name: agent-md-site
+        path: _site/**
