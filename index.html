@@ -1061,23 +1061,41 @@ Fecha: ${new Date().toLocaleString('es-CO')}
             // Create mailto link
             const mailtoLink = `mailto:juan@insigniaimpact.com?subject=Nuevo Lead: ${formData.empresa} - ${formData.servicio}&body=${encodeURIComponent(emailBody)}`;
             
-            // Open mailto
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            message.textContent = '¡Gracias! Tu solicitud ha sido enviada. Te contactaremos pronto.';
+            // Try to open default mail client
+            try {
+                window.location.href = mailtoLink;
+            } catch (e) {
+                console.warn('Could not open mail client:', e);
+            }
+
+            // Show success message and provide fallback instructions
+            message.innerHTML = `¡Gracias! Intenté abrir tu cliente de correo. Si no se abrió, copia este enlace y pégalo en tu cliente de correo o envía el email a <strong>juan@insigniaimpact.com</strong>:<br><a id="mailtoFallback" href="${mailtoLink}">${mailtoLink}</a> <button id="copyMailto">Copiar enlace</button>`;
             message.className = 'form-message success';
             message.style.display = 'block';
-            
+
+            // Attach copy handler
+            setTimeout(() => {
+                const copyBtn = document.getElementById('copyMailto');
+                if (copyBtn) {
+                    copyBtn.addEventListener('click', () => {
+                        navigator.clipboard.writeText(mailtoLink).then(() => {
+                            copyBtn.textContent = 'Copiado';
+                            setTimeout(() => { copyBtn.textContent = 'Copiar enlace'; }, 2000);
+                        });
+                    });
+                }
+            }, 100);
+
             // Reset form
             setTimeout(() => {
                 this.reset();
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Enviar Solicitud';
                 
+                // hide message after 12s so user can copy if needed
                 setTimeout(() => {
                     message.style.display = 'none';
-                }, 3000);
+                }, 12000);
             }, 2000);
         });
 
