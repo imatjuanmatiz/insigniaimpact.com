@@ -46,3 +46,17 @@ jobs:
       with:
         name: agent-md-site
         path: _site/**
+
+  deploy:
+    needs: build-and-generate
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
